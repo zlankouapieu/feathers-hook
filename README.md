@@ -1,2 +1,2 @@
 # feathers-hook
-@zlan/feathers-hook 
+@elsekoya/feathers-hook 

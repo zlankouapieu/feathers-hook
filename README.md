@@ -5,8 +5,9 @@ this package is feathersjs hook for create and update service methode to convert
 
 # how to use
 
-1-define image dir var in  config/default.json
+1-define image dir and image_url var in  config/default.json
 "image_dir":"../public/images"
+"image_url":"/images"
 
 2- import in app.hooks.js
 const {base64Hook} = require("./base64-to-image")

@@ -1,0 +1,19 @@
+{
+  "name": "@elsekoya/feathers-hooks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlankouapieu/feathers-hook.git"
+  },
+  "author": "elsekoya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zlankouapieu/feathers-hook/issues"
+  },
+  "homepage": "https://github.com/zlankouapieu/feathers-hook#readme",
+  "description": ""
+}

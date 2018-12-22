@@ -6,7 +6,7 @@ module.exports.base64Hook = (ctx) => {
     // field is image
     for (const key in ctx.data) {
         if (ctx.data.hasOwnProperty(key)) {
-            if (key.search(new RegExp('image'))>-1) {
+            if (key.search(new RegExp('image'))>-1  && ctx.data[key].search(new RegExp("data:image"))>-1 ) {
                 const img_field = ctx.data[key];
 
                 let img_url = ""
@@ -37,8 +37,23 @@ module.exports.base64Hook = (ctx) => {
                 const image_field_url = base64img.imgSync(img_field,img_url,img_name)
                 
                 
+                img_ext = img_field.split(";").find(
+                    (e) => { return e.search(new RegExp("image"))>-1}
+                ).split("/").find(
+                    (e) => { return e.search(new RegExp("image")) == -1 }
+                );
+
+
                 
-                ctx.data[key] = image_field_url
+
+                try {
+                    ctx.data[key] = ctx.app.get('image_url').concat('/').concat(img_name).concat(".").concat(img_ext);
+                } catch (error) {
+                    console.error("you are not define image_url in feathers app config")
+                }
+
+                
+                
             }
         }
     }

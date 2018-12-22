@@ -22,3 +22,7 @@ const {base64Hook} = require("./base64-to-image")
     patch: [base64Hook],
     remove: []
   }
+
+5 - add
+app.use(express.json({limit:'10mb'}));
+app.use(express.urlencoded({ extended: true,limit:'10mb' }));

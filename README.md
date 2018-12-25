@@ -12,20 +12,32 @@ this package is feathersjs hook for create and update service methode to convert
 "image_url":"/images"
 
 2- import in app.hooks.js
+
 const {base64Hook} = require("./base64-to-image")
 
 
 3- 
+
 {
+    
     all: [ log() ],
+    
     find: [],
+    
     get: [],
+    
     create: [base64Hook],
+    
     update: [base64Hook],
+    
     patch: [base64Hook],
+    
     remove: []
+  
   }
 
 5 - add
+
 app.use(express.json({limit:'10mb'}));
+
 app.use(express.urlencoded({ extended: true,limit:'10mb' }));

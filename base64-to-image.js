@@ -43,11 +43,13 @@ module.exports.base64Hook = (ctx) => {
                     (e) => { return e.search(new RegExp("image")) == -1 }
                 );
 
-
-                
-
                 try {
-                    ctx.data[key] = ctx.app.get('image_url').concat('/').concat(img_name).concat(".").concat(img_ext);
+                    if (img_ext == 'jpeg' || img_ext == 'JPEG') {
+                        ctx.data[key] = ctx.app.get('image_url').concat('/').concat(img_name).concat(".").concat('jpg');
+                    }else{
+                        ctx.data[key] = ctx.app.get('image_url').concat('/').concat(img_name).concat(".").concat(img_ext);
+                    }
+                    
                 } catch (error) {
                     console.error("you are not define image_url in feathers app config")
                 }

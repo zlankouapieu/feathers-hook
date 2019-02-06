@@ -7,7 +7,7 @@ this package is feathersjs hook for create and update service methode to convert
 
 1-define image dir and image_url var in  config/default.json
 
-"image_dir":"../public/images"
+"images_dir":"../public/images"
 
 "image_url":"/images"
 

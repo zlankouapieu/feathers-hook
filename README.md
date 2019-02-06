@@ -13,7 +13,7 @@ this package is feathersjs hook for create and update service methode to convert
 
 2- import in app.hooks.js
 
-const {base64Hook} = require("./base64-to-image")
+const {base64Hook} = require("@elsekoya/feathers-hooks/base64-to-image")
 
 
 3- 
